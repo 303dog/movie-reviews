@@ -2,7 +2,7 @@
 
 require './config/environment'
 
-# Application controller
+# Handles non-model based routing, helpers, sessions
 class ApplicationController < Sinatra::Base
   configure do
     set :public_folder, 'public'
