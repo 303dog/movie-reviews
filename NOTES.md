@@ -22,7 +22,7 @@
 
 # CONTROLLERS
 #### application
-    '/'
+  * '/'
         >shows index
 #### user
   * get '/signup'
