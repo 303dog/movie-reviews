@@ -14,3 +14,4 @@
   * editing the .gitignore file
   * initiate Git repository and committing
   * run rucobop to get rid of any errors before starting
+  * remember to perform rake:migrate regularly to make sure a database is still available after deleting the default sqllite
