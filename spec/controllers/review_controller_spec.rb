@@ -6,37 +6,35 @@ describe ReviewsController do
   context 'logged in' do
     describe 'create new review' do
       it 'loads the new review form' do
-        user = User.create(username: 'user', email: 'email', password: 'password')
+        user = User.create(username: 'user', email: 'email', password_digest: 'password')
         visit '/login'
         fill_in(:username, with: user.username)
-        fill_in(:password, with: 'password')
-        click_button 'submit'
+        fill_in(:password_digest, with: 'password')
+        click_button 'Submit'
         
         movie = Movie.create(name: 'The movie')
-        visit '/movie/#{movie.id}'
+        get "/movies/#{movie.id}"
         
-        expect(last_response_status).to eql(200)
-        expect (last_response_body).to include('Add a review')
+        expect(response.status).to eq(200)
+        expect(response.body).to include('Add a review')
       end
 
       it 'creates a new review' do
-        user = User.create(username: 'user', email: 'email', password: 'password')
+        user = User.create(username: 'user', email: 'email', password_digest: 'password')
         visit '/login'
         fill_in(:username, with: user.username)
-        fill_in(:password, with: 'password')
-        click_button 'submit'
+        fill_in(:password_digest, with: 'password')
+        click_button 'Submit'
 
         movie = Movie.create(name: 'The movie')
         params = {
           content: 'good movie',
           rating: 5,
-          movie_id: 1,
-          user_id: 1
         }
-        visit '/movie/#{movie.id}'
+        visit "/movies/#{movie.id}"
         fill_in(:content, with: params[:content])
-        fill_in(:rating, with: params[:rating])
-        click_button 'submit'
+        select params[:rating], from: :rating
+        click_button 'Submit'
 
         review = user.reviews.find_by(content: params[:content])
         expect(review.user_id).to eq(user.id)

@@ -2,7 +2,12 @@
   * why use shotgun?
   * how do you know which .gitignore lines to delete for the current application?
   * why do we need to get rid of the development database?
-  * rspec what is it?
+  * rspec what is it? alternative to Minitest
+  * problem with passing the first review test
+  -> Failure/Error: expect(response.status).to eq(200)
+     
+     NameError:
+       undefined local variable or method `response' for #<RSpec::ExampleGroups::ReviewsController::LoggedIn::CreateNewReview:0x00007f91c3aa03a0>
 
 # Things learned
   * using shotgun means just running the program right off the bat without using ruby file.rb
@@ -27,4 +32,5 @@
 # Order of activities (day 2)
   * adding tests using the existing application_controller_spec.rb and extrapolating to all 3 other classes
   * what is rspec? run rspec to check for any logical issues
+  * adding tests to the reviews class, making sure it creates no issues outside of rspec
   * 
