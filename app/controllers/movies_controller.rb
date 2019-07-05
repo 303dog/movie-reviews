@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# movies controller class
+# manages movies-based routing, helpers, sessions
 class MoviesController < ApplicationController
   # create new movie creation form
   get '/movies/new' do

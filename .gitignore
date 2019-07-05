@@ -36,3 +36,5 @@
 
 *.sqlite
 .QUESTIONS.md
+db/development.sqlite
+db/development.sqlite4
