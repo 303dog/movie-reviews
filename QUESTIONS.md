@@ -5,6 +5,7 @@
 # Things learned
   * using shotgun means just running the program right off the bat without using ruby file.rb
   * doing robocop -a seems to fix a lot of problems automatically
+  * why do we need to get rid of the development database?
 
 
 # Order of activities
@@ -15,3 +16,7 @@
   * initiate Git repository and committing
   * run rucobop to get rid of any errors before starting
   * remember to perform rake:migrate regularly to make sure a database is still available after deleting the default sqllite
+  * stubbing out the rest of the main classes (in this case, after user, reviews, and movies)
+  * taking out unnecessary methods based on the notes made earlier
+  * running rucocop on all
+  * getting rid of the development database
