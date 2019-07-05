@@ -1,14 +1,17 @@
 # Questions
   * why use shotgun?
   * how do you know which .gitignore lines to delete for the current application?
+  * why do we need to get rid of the development database?
+  * rspec what is it?
 
 # Things learned
   * using shotgun means just running the program right off the bat without using ruby file.rb
   * doing robocop -a seems to fix a lot of problems automatically
-  * why do we need to get rid of the development database?
+  * SHIFT+ALT+DOWN/UP to duplicate line
+  * ALT+DOWN/UP to move line
 
 
-# Order of activities
+# Order of activities (day 1)
   * using cornmeal to generate the scaffolding
   * come up with a good MVC model and main routes
   * getting rid of custom graphics and auto-generated html content
@@ -20,3 +23,8 @@
   * taking out unnecessary methods based on the notes made earlier
   * running rucocop on all
   * getting rid of the development database
+
+# Order of activities (day 2)
+  * adding tests using the existing application_controller_spec.rb and extrapolating to all 3 other classes
+  * what is rspec? run rspec to check for any logical issues
+  * 

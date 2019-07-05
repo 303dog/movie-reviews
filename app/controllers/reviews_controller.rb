@@ -3,9 +3,9 @@
 # manages reviews-based routing, helpers, sessions
 class ReviewsController < ApplicationController
   # GET: /reviews/new
-  get '/reviews/new' do
-    erb :"/reviews/new.html"
-  end
+  # get '/reviews/new' do
+  #   erb :"/reviews/new.html"
+  # end
 
   # create new review, redirect to review
   post '/reviews' do
