@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+require 'pry'
 require_relative '../spec_helper'
 
 describe ReviewsController do
@@ -11,12 +11,12 @@ describe ReviewsController do
         fill_in(:username, with: user.username)
         fill_in(:password_digest, with: 'password')
         click_button 'Submit'
-        
+
         movie = Movie.create(name: 'The movie')
-        get "/movies/#{movie.id}"
+        visit "/movies/#{movie.id}"
         
-        expect(response.status).to eq(200)
-        expect(response.body).to include('Add a review')
+        expect(page.status_code).to eq(200)
+        expect(page.html).to include('Add a review')
       end
 
       it 'creates a new review' do
@@ -35,13 +35,13 @@ describe ReviewsController do
         fill_in(:content, with: params[:content])
         select params[:rating], from: :rating
         click_button 'Submit'
-
+        binding.pry
         review = user.reviews.find_by(content: params[:content])
         expect(review.user_id).to eq(user.id)
         expect(review.movie_id).to eq(movie.id)
         expect(review.content).to eq(params[:content])
         expect(review.rating).to eq(params[:rating])
-        expect(page.current_path).to eq('/movie/#{movie.id}')
+        expect(page.current_path).to eq('/movies/#{movie.id}')
       end
 
       # it 'does not allow empty review' do

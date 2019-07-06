@@ -3,11 +3,13 @@
   * how do you know which .gitignore lines to delete for the current application?
   * why do we need to get rid of the development database?
   * rspec what is it? alternative to Minitest
-  * problem with passing the first review test
+  * (Alessandra) problem with passing the first review test
   -> Failure/Error: expect(response.status).to eq(200)
      
      NameError:
        undefined local variable or method `response' for #<RSpec::ExampleGroups::ReviewsController::LoggedIn::CreateNewReview:0x00007f91c3aa03a0>
+    -> seems solvable only by using visit instead of get and following this: http://blog.plataformatec.com.br/2012/06/improving-the-integration-between-capybara-and-rspec/
+  * What's the difference between Class.new() and Class.create()
 
 # Things learned
   * using shotgun means just running the program right off the bat without using ruby file.rb

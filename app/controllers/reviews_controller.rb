@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+require 'pry'
 
 # manages reviews-based routing, helpers, sessions
 class ReviewsController < ApplicationController
@@ -9,8 +9,10 @@ class ReviewsController < ApplicationController
 
   # create new review, redirect to review
   post '/reviews' do
-    redirect '/reviews/:id'
-  end
+    review = Review.create(content: params[:content], rating: params[:rating], movie_id: params[:movie_id], user_id: session[:user_id])
+    binding.pry
+    redirect '/reviews'
+  end 
 
   # update review
   get '/reviews/:id' do
