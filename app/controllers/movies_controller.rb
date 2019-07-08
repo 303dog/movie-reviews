@@ -9,13 +9,13 @@ class MoviesController < ApplicationController
 
   # create movie
   post '/movies' do
-    redirect '/movies'
+    redirect '/'
   end
 
   # get movie review
   get '/movies/:id' do
     @movie = Movie.find_by(id: params[:id])
-    erb :"/movies/show.html"
+    erb :'/movies/show.html';
   end
 
   # list all movives

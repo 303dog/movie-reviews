@@ -29,19 +29,18 @@ describe ReviewsController do
         movie = Movie.create(name: 'The movie')
         params = {
           content: 'good movie',
-          rating: 5,
+          rating: 5
         }
         visit "/movies/#{movie.id}"
         fill_in(:content, with: params[:content])
         select params[:rating], from: :rating
         click_button 'Submit'
-        binding.pry
         review = user.reviews.find_by(content: params[:content])
         expect(review.user_id).to eq(user.id)
         expect(review.movie_id).to eq(movie.id)
         expect(review.content).to eq(params[:content])
-        expect(review.rating).to eq(params[:rating])
-        expect(page.current_path).to eq('/movies/#{movie.id}')
+        expect(review.rating.to_i).to eq(params[:rating])
+        expect(page.current_path).to eq("/movies/#{movie.id}")
       end
 
       # it 'does not allow empty review' do

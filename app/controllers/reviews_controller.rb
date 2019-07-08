@@ -10,8 +10,7 @@ class ReviewsController < ApplicationController
   # create new review, redirect to review
   post '/reviews' do
     review = Review.create(content: params[:content], rating: params[:rating], movie_id: params[:movie_id], user_id: session[:user_id])
-    binding.pry
-    redirect '/reviews'
+    redirect "/movies/#{review.movie_id}"
   end 
 
   # update review

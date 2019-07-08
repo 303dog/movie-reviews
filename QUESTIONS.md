@@ -35,4 +35,19 @@
   * adding tests using the existing application_controller_spec.rb and extrapolating to all 3 other classes
   * what is rspec? run rspec to check for any logical issues
   * adding tests to the reviews class, making sure it creates no issues outside of rspec
-  * 
+  * Major issues passing tests, review object can't seem to get filled, might have something to do with user_id getting through authentication
+
+  * In the process of debugging, learning a few Git tricks
+  * To pull a certain commit from a remote repo: git fetch 
+
+```
+$ git clone $URL
+$ cd $PROJECT_NAME
+$ git reset --hard $SHA1
+```
+
+* With every repo that I'm cloning and checking out, need to 
+1. Delete Gemfile, set up new bundle install
+2. Change the sqllite version into something else
+3. Possibly change the gem source for datacleaner
+4. note the ssh isa is available from the keychain access manager to pull the git directly
