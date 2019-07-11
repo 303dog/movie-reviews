@@ -51,3 +51,9 @@ $ git reset --hard $SHA1
 2. Change the sqllite version into something else
 3. Possibly change the gem source for datacleaner
 4. note the ssh isa is available from the keychain access manager to pull the git directly
+
+# Order of activities (day 3)
+
+* Make sure the specific movie page is displaying (by adding an if statement to ensure an empty page does not produce an error), in the view
+* Redirect to create new movie page if none exists (in the controller)
+* Mocking up the log-in
