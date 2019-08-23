@@ -11,6 +11,7 @@ describe ReviewsController do
                   content: 'good movie',
                   rating: 5
                 }
+      page.set_rack_session(user_id: @user.id)
     end
     
     # session[:user_id] = @user.id
@@ -28,10 +29,10 @@ describe ReviewsController do
 
       it 'creates a new review' do
         # user = User.create(username: 'user', email: 'email', password_digest: 'password')
-        visit '/login'
-        fill_in(:username, with: @user.username)
-        fill_in(:password_digest, with: 'password')
-        click_button 'Submit'
+        # visit '/login'
+        # fill_in(:username, with: @user.username)
+        # fill_in(:password_digest, with: 'password')
+        # click_button 'Submit'
 
         visit "/movies/#{@movie.id}"
         fill_in(:content, with: @params[:content])
